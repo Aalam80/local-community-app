@@ -1,0 +1,38 @@
+h1{
+    color: brown;
+    
+}
+h3{
+    color: blueviolet;
+}
+
+.blockquote{
+    color: blueviolet;
+    
+}
+span{
+    color: brown;
+}
+
+.col-md-11{
+    color: brown;
+}
+
+h4{
+    color: cadetblue;
+}
+.box{
+    border: 2px solid brown;
+    background-color: black;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    left: 00px;
+ 
+    color: white;
+    
+}
+
+body{
+    background-color:antiquewhite;
+}

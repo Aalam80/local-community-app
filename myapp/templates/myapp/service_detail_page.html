@@ -1,0 +1,31 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+<!-- {{s_data}}
+{{s_data.service_provider}}
+{{s_data.price}}
+{{s_data.contact_number}} -->
+  {% for i in serv %}
+  
+   
+
+  <div class="col-md-6">
+    <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="col p-4 d-flex flex-column position-static">
+ 
+    <article>
+      <h1><a href="{% url 'service_detail' pk=i.pk  %}">{{i.service_name}}</a></h1>
+       
+    </article>
+
+      </div>
+      <div class="col-auto d-none d-lg-block">
+       
+       
+      </div>
+    </div>
+  </div>
+
+
+  {% endfor %}
+{% endblock %}

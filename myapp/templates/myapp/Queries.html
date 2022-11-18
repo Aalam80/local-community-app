@@ -1,0 +1,101 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+
+<form method="POST" class="comment-form" action=".">
+    {% csrf_token %}
+    {{ Query_data.as_p }}
+    <button class="btn btn-primary" value="submit">save</button>
+   
+</form>
+{% else %}
+<a href="{% url 'login' %}"><h1>login or register to post Query</h1></a>
+{% endif %}
+<h1>Comments</h1>
+<h3 class="replied-comments container mt-2 ">Replies</h3>
+
+{% for i in queris_data %}
+
+<div class="raw my-3" >
+    <div class="col-md-1">
+      <!-- <h5>{{i.Query_category}}</h5> <br> -->
+      <img class="img-thumbnail"  src="{% static 'images/user.png' %}" class="img-thumbnail"  alt="..."><span>{{i.Query_detail}} </span><br>  <br>
+      
+      
+    <figcaption class="blockquote-footer">
+      by <cite title="Source Title">{{i.user}}</cite>
+    </figcaption>
+  </div>
+    
+    <div class="col-md-11">
+      
+     
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<div class="replied-comments container mt-2 ">
+ 
+  {%  for reply in i.replies.all %}
+    
+    <figure >
+      <blockquote class="blockquote">
+        <p> {{reply.Query_detail}} </p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        by <cite title="Source Title">{{reply.user}}</cite>
+      </figcaption>
+    </figure>
+
+  {% endfor %}
+  {% if user.is_authenticated %}
+  <div class=" form-group row">
+<div class="'rrplied-comments container mt-2">
+    <div class="form-group row">
+    <!-- <a href="" class="btn btn-primary">reply</a> -->
+    <p>
+       
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#replybox{{i.id}}" aria-expanded="false" aria-controls="replybox{{i.id}}">
+          reply
+</form>
+        </button>
+      </p>
+      <div class="collapse" id="replybox{{i.id}}">
+        <div class="card card-body">
+      
+
+    
+<form method="POST" class="reply-form" action=".">
+  {% csrf_token %}
+  <input type="hidden"name='Queries_id'value="{{ i.id}}">
+  {{ Query_data.as_p }}
+  <button class="btn btn-primary" value="submit">save</button>
+ 
+</form>
+{% endif %}
+
+  </div>
+</div>
+            
+        </div>
+       
+      </div>
+    </div>
+</div>
+
+
+<!-- <a href="" class="btn btn-primary">reply</a> -->
+{% endfor %}
+
+
+{% endblock %}

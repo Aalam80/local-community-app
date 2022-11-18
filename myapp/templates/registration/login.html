@@ -1,0 +1,35 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+{% if form.errors %}
+<p style="color: red; ">your username and password do not match</p>
+
+{% endif %}
+<form action="{% url 'login' %}" method="post">
+{% csrf_token %}
+<table>
+    <tr>
+        <td>
+            {{ form.username.label }}
+            
+        </td>
+    <td>
+        {{ form.username }}
+    </td>
+
+    </tr>
+    <tr>
+        <td>{{ form.password.label }}</td>
+        <td>{{ form.password }}</td>
+    </tr>
+   
+</table>
+<input type="submit" value="login">
+
+
+</form>
+<a href="{% url 'register_user'%}"><button type="button" class="btn btn-primary">click here to register</button></a>
+<a href="{% url 'reset_password' %}"><button type="button" class="btn btn-danger">forgot password</button></a>
+
+
+{% endblock %}

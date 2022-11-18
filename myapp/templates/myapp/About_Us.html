@@ -1,0 +1,55 @@
+
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+  <!--about us strats here-->
+    <div class="container">
+    <div class="raw">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ullam, expedita 
+        distinctio ut sapiente eum libero iusto maxime hic minima dolore, vitae repellendus
+         possimus cum enim minus reprehenderit aliquid alias nostrum nulla ipsam culpa deleniti
+          exercitationem animi. Placeat assumenda animi 
+        saepe nulla? Harum enim culpa sapiente maiores, adipisci totam esse!</p>
+    </div>
+    <!-- row ends -->
+    <div class="row">
+      <div class="col-md-4">
+        <div id="box">
+        <img src="{% static 'images/service.jpg' %}" alt="" class="img-fluid">
+        </div>
+        </div>
+        <div class="col-md-8">
+          <div class="container">
+            <div class="row">
+              <h1 class="text-center" >AT YOUR SERVICE</h1>
+            </div>
+            
+            <div class="row">
+              <div class="col-lg-6">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong>Name:-</strong>Aalam services</li>
+                  <li class="list-group-item"><strong>publish:-</strong>19<sup>th</sup> june 2000</li>
+                  <li class="list-group-item"><strong>Qualification:-</strong>graduate</li>
+                  <li class="list-group-item"><strong>Address:-</strong>sakinaka andheri</li>
+                  <li class="list-group-item"><strong>city:-</strong>mumbai</li>
+                </ul>
+
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong>Mobile:-</strong>9137957960</li>
+                  <li class="list-group-item"><strong>Email:-</strong>aalamshaikh9137@gmail.com</li>
+                  <li class="list-group-item"><strong>Hobby:-</strong>cooking</li>
+                  <li class="list-group-item"><strong>Experiance:-</strong>1 year</li>
+                  <li class="list-group-item"><strong>country:-</strong>India</li>
+                </ul>
+
+              </div>
+            </div>
+            </div>
+
+        </div>
+  </section>
+{% endblock %}
